@@ -1,0 +1,4 @@
+# sources bashrc submodules first 
+
+#find "$HOME/.dotfiles/bash.d/" -type f -name "*.bashrc" -exec "source {}" \;
+find "$HOME/.dotfiles/bash.d/" -type f -name "*.bashrc" -exec "source {}" \;
