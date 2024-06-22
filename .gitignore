@@ -1,2 +1,6 @@
+**.dump
 **.idea
-idea**
+idea.**
+temp/
+.temp/
+**.temp
