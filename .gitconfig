@@ -1,24 +1,23 @@
 [user]
-	        email = zaccsorny@yahoo.com
-		    username = csorndawg
-		        name = csorndawg
+	email = zaccsorny@yahoo.com
+	name = csorndawg
 
 [init]
-	    defaultBranch = main
+	defaultBranch = main
 
 [core]
-	    editor = vim
+	editor = vim
 
 [init]
-	    defaultBranch = master
+	defaultBranch = main
 
 [merge]
-	    conflictstyle = diff3
+	conflictstyle = diff3
 
 [diff]
-	    tool = vimdiff
+	tool = vimdiff
 
 [credential]
-	    #cache expires after 1 day
-            helper = cache --timeout=86400
+	#cache expires after 1 day
+        helper = cache --timeout=86400
 	 
