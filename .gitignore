@@ -29,3 +29,7 @@ ideas.**
 
 utils/trash/**
 utils/diffpatches/archive/
+
+# want to ignore all but root level ".zsh" and highlighter ".zsh" files 
+zsh.d/plugins/zsh-syntax-highlighting/**
+#!/**/**.zsh
