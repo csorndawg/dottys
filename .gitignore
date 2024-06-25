@@ -9,6 +9,13 @@ tmp.**
 temp/**
 
 **.swp
+**.swo
+**.idea
+**.ideas
+idea.**
+ideas.**
+
+*/wips/**
 **.idea
 **.ideas
 idea.**
@@ -18,7 +25,7 @@ ideas.**
 
 # ignores reference files/folders (example code, help docs, etc. temporarily stored to help with building out code)
 **/refs/**
-**.ref
+**-ref.zsh
 
 utils/trash/**
 utils/diffpatches/archive/
