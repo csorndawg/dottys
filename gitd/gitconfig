@@ -19,7 +19,7 @@
 
 [credential]
 	#cache expires after 1 day
-        helper = cache --timeout=86400
+        helper = --timeout=86400
 
 [push]
 	autoSetupRemote = true
