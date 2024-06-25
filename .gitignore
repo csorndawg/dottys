@@ -15,3 +15,10 @@ idea.**
 ideas.**
 
 */wips/**
+
+# ignores reference files/folders (example code, help docs, etc. temporarily stored to help with building out code)
+**/refs/**
+**.ref
+
+utils/trash/**
+utils/diffpatches/archive/
