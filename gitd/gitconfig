@@ -7,6 +7,7 @@
 
 [core]
 	editor = vim
+    pager = delta
 
 [init]
 	defaultBranch = main
@@ -16,10 +17,45 @@
 
 [diff]
 	tool = vimdiff
+    colorMoved = default
 
 [credential]
 	#cache expires after 1 day
-        helper = --timeout=86400
+    helper = cache --timeout=86400
 
 [push]
 	autoSetupRemote = true
+
+[pager]
+    diff = delta
+    show = delta
+    log = delta
+    blame = delta
+    reflog = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    syntax-theme = Nord
+    side-by-side = true
+    line-numbers = true
+    navigate = true    # use n and N to move between diff sections
+    
+    # removed/dropped diff changes
+    minus-style = red
+    minus-non-emph-style = red
+    minus-emph-style = red
+    minus-empty-line-marker-style = red
+    line-numbers-minus-style = bold red
+
+    # new/added diff changes
+    plus-style = green
+    plus-non-emph-style = green
+    plus-emph-style = green
+    plus-empty-line-marker-style = green
+    line-numbers-plus-style = bold green 	
+
+    # zero/no change
+    #line-numbers-zero-style = darkslateblue
+    line-numbers-zero-style = dim darkslateblue
