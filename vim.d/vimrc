@@ -1,14 +1,3 @@
->>>>>>> ef553a3 (cheat conf and wildmenu)
-"" source vimrc modules 
-
-" trying hack
-source $HOME/.dotfiles/vim.d/plug.vimrc
-source $HOME/.dotfiles/vim.d/general.vimrc
-source $HOME/.dotfiles/vim.d/leader.vimrc
-source $HOME/.dotfiles/vim.d/functions.vimrc
-source $HOME/.dotfiles/vim.d/plugins.vimrc
-||||||| parent of 37ac5a8 (first vimrc commit)
-=======
 "" ------------------------
 ""  GENERAL 
 "" ------------------------
