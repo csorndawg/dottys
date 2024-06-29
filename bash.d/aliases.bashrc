@@ -1,0 +1,1 @@
+alias bat="$(which batcat)"

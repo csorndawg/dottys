@@ -1,0 +1,5 @@
+
+source /home/reverse-apache-master/.dotfiles/bash.d/aliases.bashrc
+<add other bash.d modules>
+
+
