@@ -22,6 +22,7 @@ alias gdfh="git diff HEAD~1"
 alias gdfs="git diff --staged "
 alias grs="git restore "$1
 alias grss="git restore --staged "
+alias gpo="git push -u origin $(git branch --show-current)"
 
 
 # tmux 
@@ -32,9 +33,19 @@ alias tmstb="tmux set-buffer"
 alias tmab="tmux save-buffer -a"
 alias tmcb="tmux choose-buffer"
 alias tmpb="tmux paste-buffer"
+alias tmsk="tmux send-keys "
+alias tmnw="tmux new-window -t"
+alias tmnwn="tmux new-window -n "
+alias tmds="tmux detach"
+alias tmas="tmux attach"
 
 
 
+
+
+
+# general 
+alias eg=egrep
 
 # cron
 alias cte="crontab -e"
@@ -53,7 +64,9 @@ alias tmuxDumpBufferExisting="tmux save-buffer -a $HOME/.local/state/tmux/sessio
 
 # general 
 alias varnotes="cd ~/.local/var/notes"
-alias zshrc_src="source $HOME/.zshrc "
+alias sourceZSHRC="source $HOME/.zshrc "
+alias sourceVIMRC="source $HOME/.vimrc "
+alias historyLog="echo $(history |tail -n2 | head -n1) | tee $HOME/.local/state/history/command_history_dumps.txt"
 
 
 ##################################################
@@ -96,4 +109,5 @@ aliaswithparameters_test(){
 # override all other aliases with the same name
 # defined by the `-g` flag
 # example:  alias -g <alias name>="<alias command>"
+
 
