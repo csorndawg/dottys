@@ -19,7 +19,7 @@ export CARGO_BIN="$HOME/.cargo/bin"
 TOOLBOX_BIN="$HOME/git/ongoing/toolbox/bin"
 
 # standard bins
-export PATH=$HOME/.local/bin/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # non-standard bins
 export PATH=$GO_BIN:$CARGO_BIN:$TOOLBOX_BIN:$PATH
