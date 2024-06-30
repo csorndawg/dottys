@@ -1,9 +1,4 @@
-
-" YCM 
-let g:ycm_python_interpreter_path = ''
-let g:ycm_python_sys_path = []
-let g:ycm_extra_conf_vim_data = [  'g:ycm_python_interpreter_path',  'g:ycm_python_sys_path']
-let g:ycm_global_ycm_extra_conf = '~/.config/vim/ycm_global_extra_conf.py'
+"" General
 "" ------------------------
 
 set  nocompatible
@@ -29,6 +24,14 @@ set colorcolumn=80
 set hidden      " switch b/w buffers without having to save first
 set noswapfile
 set nobackup
+set nohlsearch
+
+" autocomplete settings
+set completeopt+=preview
+set completeopt+=menuone
+set completeopt+=longest
+
+" close quick
 
 " make undodir if not present
 silent execute '!mkdir -p ~/.vim/undodir/'
