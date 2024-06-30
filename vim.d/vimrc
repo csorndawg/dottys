@@ -284,21 +284,29 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips','$HOME/.vim/MySnippets2']
 "endif
 
 " jedi remaps 
-let g:jedi#goto_command = "<leader>jc"
-let g:jedi#goto_assignments_command = "<leader>ja"
+" Disable Jedi-vim autocompletion and enable call-signatures options
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+let g:jedi#completions_enabled=0
+
+" keep for test
 let g:jedi#goto_stubs_command = "<leader>js"
-let g:jedi#goto_definitions_command = "<leader>jd"
-"let g:jedi#documentation_command = ///"K"
 let g:jedi#documentation_command = "<leader>j"
-let g:jedi#usages_command = "<leader>jn"
-let g:jedi#completions_command = "<C-Space>"
-"let g:jedi#rename_command = /////"<leader>r"
-"let g:jedi#rename_command_keep_name = /////"<leader>R"
+let g:jedi#completions_command = "<leader><CR>"
 
 
 " remap <leader>z to run python, bash files
-nnoremap <leader>z :!w %<CR>
-inoremap <leader>zz <ESC>:!w %<CR>
+nnoremap <leader>z :! python3  %<CR>
+inoremap <leader>zz :! clear <CR>
+"inoremap jk <ESC>
+inoremap <leader>,, <ESC>
+nnoremap <leader>,, i
+
 
 
 " yaml 
