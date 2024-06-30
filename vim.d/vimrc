@@ -1,4 +1,3 @@
-"" ------------------------
 ""  GENERAL 
 "" ------------------------
 
@@ -118,14 +117,13 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
+Plug 'jpalardy/vim-slime', { 'for': 'python' }
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 " alernate colorschemes
 Plug 'xero/miasma.nvim' 
 Plug 'mhartington/oceanic-next'
 Plug 'romainl/Apprentice'
-
-" ultisnips/ycm test
-Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
