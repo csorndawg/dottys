@@ -180,5 +180,5 @@ source ~/.config/fzf/fzf.config
 # ========================================================================
 
 function activate-venv() {
-  source "$(find /opt/python-venvs/ -type f -path '*bin.activate' | fzf)"
+  source "$(find /opt/python-venvs/ -type f -path '*activate' | fzf)"
   }
