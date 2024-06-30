@@ -1,4 +1,9 @@
-""  GENERAL 
+
+" YCM 
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [  'g:ycm_python_interpreter_path',  'g:ycm_python_sys_path']
+let g:ycm_global_ycm_extra_conf = '~/.config/vim/ycm_global_extra_conf.py'
 "" ------------------------
 
 set  nocompatible
@@ -376,12 +381,3 @@ nmap <F10> :IPythonCellInsertBelow<CR>a
 " also make <F9> and <F10> work in insert mode
 imap <F9> <C-o>:IPythonCellInsertAbove<CR>
 imap <F10> <C-o>:IPythonCellInsertBelow<CR>A|a
-
-" YCM 
-let g:ycm_python_interpreter_path = ''
-let g:ycm_python_sys_path = []
-let g:ycm_extra_conf_vim_data = [
-  \  'g:ycm_python_interpreter_path',
-  \  'g:ycm_python_sys_path'
-  \]
-let g:ycm_global_ycm_extra_conf = '~/.config/vim/ycm_global_extra_conf.py'
