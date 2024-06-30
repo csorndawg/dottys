@@ -172,8 +172,8 @@ zstyle :prompt:pure:git:stash color magenta
 
 prompt pure
 
-# syntax hl - needs to be at end of file 
-# source ~/.dotfiles/zsh.d/plugins/zsh-syntax-highlighting.zsh
+# source fzf configurations
+source ~/.config/fzf/fzf.config 
 
 
 # ========================================================================
@@ -183,28 +183,3 @@ prompt pure
 function activate-venv() {
   source "$HOME/.venv/$(ls ~/.venv/ | fzf)/bin/activate"
   }
-#
-#
-## make new pomodoro dir sandbox
-alias pomodoro_newdir -p "~/git/daily/pomodoro.$(date +%Y_%m_%d.%H%M_%S)" 
-
-
-
-# ========================================================================
-#   FZZ: key binds, completions, scripts, etc.
-#
-# ========================================================================
-
-
-# source keybindings and completions
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2> /dev/null
-
-
-
-# ========================================================================
-# 	<PLACEHOLDER> HEADER
-#
-# ========================================================================
-
-# section comments
-
