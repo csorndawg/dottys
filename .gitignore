@@ -6,6 +6,7 @@
 diff.**
 tmp.**
 **.tmp
+tmp/
 
 **/*.bk
 temp/**

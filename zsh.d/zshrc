@@ -82,17 +82,21 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh.d"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#81A1C1"
 ZSH_AUTOSUGGEST_EXECUTE_WIDGETS=(menu-expand-or-complete)
+#ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(menu-expand-or-complete)
+#ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(menu-expand-or-complete)
 
 # enbable s tab complete for current autosuggest
 # <TAB> will complete suggestion AND execute
 # <SHIFT TAB>  completes suggestion but doesnt execute
-bindkey '^I' autosuggest-execute
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+#bindkey '^I' autosuggest-execute
+
+# <CTRL><SPACE> to accept and execute suggestion
+bindkey '^@' autosuggest-execute
 
 
 ## @TODO: continue reviewing docs/github to see if better options available
 ## NOTE: zsh-bat overwrites "cat" with "bat" - use "rcat" to use old "cat"
-plugins=(git colored-man-pages zsh-autosuggestions git-extras tldr z  zsh-vi-mode zsh-syntax-highlighting )
+plugins=(git colored-man-pages zsh-autosuggestions git-extras tldr z  zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
