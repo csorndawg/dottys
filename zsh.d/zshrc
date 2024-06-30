@@ -1,4 +1,3 @@
-# TO SOURCE THIS FILE have ". $ZSH_CUSTOM/lib/exports.zsh" 
 # in zshrc
 export ZSHRC_SOURCING_TEST="~/test_zsh.txt"
 
@@ -146,7 +145,6 @@ source "$HOME/.dotfiles/zsh.d/lib/exports.zsh"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs='git status'
-export DOTFILES_HOME="$HOME/.dotfiles"
 alias gs='git status'
 
 
@@ -156,7 +154,8 @@ alias gs='git status'
 # 	THEME
 # ========================================================================
 
-fpath+=($HOME/.config/zsh/themes/pure)
+fpath+=(/home/nukk/.dotfiles/zsh.d/themes/pure)
+fpath+=(/home/nukk/.dotfiles/zsh.d/themes/pure.zsh)
 autoload -U promptinit; promptinit
 
 zstyle :prompt:pure:user color '#81A1C1'
@@ -181,5 +180,5 @@ source ~/.config/fzf/fzf.config
 # ========================================================================
 
 function activate-venv() {
-  source "$HOME/.venv/$(ls ~/.venv/ | fzf)/bin/activate"
+  source "$(find /opt/python-venvs/ -type f -path '*bin.activate' | fzf)"
   }

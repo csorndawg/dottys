@@ -1,6 +1,3 @@
-"" General
-"" ------------------------
-
 set  nocompatible
 filetype plugin indent on
 syntax on
@@ -235,11 +232,11 @@ set statusline+=\ %{LinterStatus()}
 "" ultisnip super-tab enhanced TAB COMPLETE
 "" better key bindings for UltiSnipsExpandTrigger
 let g:SuperTabDefaultCompletionType = '<tab>'
-let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpOrExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpOrExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsListSnippets="<leader><leader>"
+let g:UltiSnipsListSnippets="<leader>lus"
 let g:UltiSnipsEditSplit="vertical"		" default is horizontal
 " for custom snippets create <snip type>_custom.<snip file extension>`
 
@@ -372,15 +369,15 @@ nnoremap <Leader>p :IPythonCellPrevCommand<CR>
 nnoremap <Leader>Q :IPythonCellRestart<CR>
 
 " map <Leader>d to start debug mode
-nnoremap <Leader>xd :SlimeSend1 %debug<CR>
+nnoremap <Leader>sd :SlimeSend1 %debug<CR>
 
 " map <Leader>q to exit debug mode or IPython
 nnoremap <Leader>q :SlimeSend1 exit<CR>
 
 " map <F9> and <F10> to insert a cell header tag above/below and enter insert mode
 nmap <F9> :IPythonCellInsertAbove<CR>a
-nmap <F10> :IPythonCellInsertBelow<CR>a
+nmap <leader>cb :IPythonCellInsertBelow<CR>a
 
 " also make <F9> and <F10> work in insert mode
 imap <F9> <C-o>:IPythonCellInsertAbove<CR>
-imap <F10> <C-o>:IPythonCellInsertBelow<CR>A|a
+imap <leader>icb <C-o>:IPythonCellInsertBelow<CR>A|a
