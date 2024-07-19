@@ -116,16 +116,30 @@ aliaswithparameters_test(){
 # general aliases
 ##################################################
 #
-# general
-a="alias"
-ag="alias | rg"
-h="history"
-hg="history | rg "
-eg=egrep
-egv="egrep -v "
-rgv="rg -v "
 
-D="diff"
+# general
+alias sbx="cd $HOME/git/ongoing/toolbox/wips/playground/sandboxes"
+alias vsbx="vim $HOME/git/ongoing/toolbox/wips/playground/sandboxes/default/sandbox_$(date +%Y%m%d_%H%M%S_%Z)"
+alias vvsbx="vim $HOME/git/ongoing/toolbox/wips/playground/sandboxes"
+alias qt="vim $HOME/.local/tmp/quick"
+alias qvt="vim $HOME/.local/var/tmp/quick"
+alias a="alias"
+alias ag="alias | rg"
+alias h="history"
+alias hg="history | rg "
+alias eg=egrep
+alias egv="egrep -v "
+alias rgv="rg -v "
+alias D="diff"
+alias V="/usr/local/bin/vim"
+alias v="/usr/local/bin/vim"
+alias vim="nvim"
+alias nv="nvim"
+alias lvim="$XDG_BIN_HOME/lvim"
+alias lunarvim="$XDG_BIN_HOME/lvim"
 
 # prelim
-xargsi='xargs -I "{}" '
+alias xargsi='xargs -I "{}" '
+alias t="cd $HOME/.toolbox"
+alias c="cd $HOME/.cheatsheets"
+alias cfg="cd $HOME/.config"

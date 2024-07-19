@@ -136,9 +136,61 @@ fi
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 
+# TODO: CLEANUP/COHNVERT TO FUNCTION MAKE FUNCTION
+
+generate_env_vars() {
+
+    # define constants
+    DOTFILES_ROOT="$HOME/.dotfiles"
+    GENERIC_EXPORTS="$HOME/.dotfiles/shell.d/exports"
+    ZSH_EXPORTS="$DOTFILES_ROOT/zsh.d/exports.zsh"
+    BASH_EXPORTS="$DOTFILES_ROOT/bash.d/exports.bash"
+    DOTFILE_STARTUP_LOGFILE="$XDG_STATE_HOME/dotfiles/logs/startup.log"
+    LOG_MSG=""
+
+    # determine if current shell is ZSH or BASH 
+    # check if using ZSH shell, otherwise assume n/zsh"
+    if [[ ! -z "$SHELL" && "$SHELL" = "/bin/zsh" ]];
+    then
+
+        OUT_MSG="ZSH shell detected. Checking for additional shell-specific exports.\n"
+        
+
+        # check if export file exists and is nonempty
+        if [[ -f "$ZSH_EXPORTS" ]];
+        then
+            source $ZSH_EXPORTS
+        else
+            # TODO:Adds too much visual noise, output ECHO to a logfile instead
+        
+            OUT_MSG="ZSH export file does not exist, is empty, or is not in the expected location. No additional files will be sourced." 
+            
+        fi
+
+    # TODO: add same logic for bash-specific overrides
+    # else   if [[ ! -z "$SHELL" && "$SHELL" = "/bin/zsh" ]];
+    else
+        OUT_MSG="ZSH shell not active, no additional files to source."
+    fi
+
+    # update log 
+    LOG_MSG="$LOG_MSG\n$OUT_MSG"
+    echo $LOG_MSG >> $DOTFILE_STARTUP_LOGFILE
+
+        
+}
+
+
 # ohmyzsh requires aliases in root level of zsh.d
 #source "$HOME/.dotfiles/zsh.d/lib/aliases.zsh"
 . "$HOME/.dotfiles/zsh.d/aliases.zsh"
+
+# NOTE: source zsh-specific exports after to avoid accidentally overwriting
+# check if zsh-specific export file exists, and source if so 
+
+
+# TEMP WORKAROUND
+source "$HOME/.dotfiles/shell.d/shell.exports"
 source "$HOME/.dotfiles/zsh.d/lib/exports.zsh"
 source "$HOME/.dotfiles/zsh.d/lib/functions.zsh"
 
@@ -185,5 +237,27 @@ source ~/.config/fzf/fzf.config
 # ========================================================================
 
 function activate-venv() {
-  source "$(find /opt/python-venvs/ -type f -path '*activate' | fzf)"
-  }
+
+LOCAL_VENVS_DIR="$XDG_STATE_HOME/python/virtualEnvs" 
+source "$(find $LOCAL_VENVS_DIR -type f -path '*activate' | fzf)"
+
+}
+
+
+
+# gracefully venv deactivating
+function venvfreeze() {
+
+# constants
+LOCAL_VENV_HOME="$XDG_STATE_HOME/python/virtualEnvs"
+CURRENT_VENV_DIR="$(which python3  | sed -E 's/\/bin.+$//g')"
+VENV_NAME="$(basename $CURRENT_VENV_DIR)"
+
+# gracefully deactivate
+pip freeze | tee $CURRENT_VENV_DIR/requirements.txt
+ln -sf "$CURRENT_VENV_DIR/requirements.txt" "$LOCAL_VENV_HOME/requirements/$VENV_NAME.requirements.txt"
+deactive 
+
+}
+
+export nvim="vim"
