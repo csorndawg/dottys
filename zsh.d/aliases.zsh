@@ -111,3 +111,21 @@ aliaswithparameters_test(){
 # example:  alias -g <alias name>="<alias command>"
 
 
+
+##################################################
+# general aliases
+##################################################
+#
+# general
+a="alias"
+ag="alias | rg"
+h="history"
+hg="history | rg "
+eg=egrep
+egv="egrep -v "
+rgv="rg -v "
+
+D="diff"
+
+# prelim
+xargsi='xargs -I "{}" '

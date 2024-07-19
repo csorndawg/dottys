@@ -135,8 +135,13 @@ fi
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-source "$HOME/.dotfiles/zsh.d/aliases.zsh"
+
+# ohmyzsh requires aliases in root level of zsh.d
+#source "$HOME/.dotfiles/zsh.d/lib/aliases.zsh"
+. "$HOME/.dotfiles/zsh.d/aliases.zsh"
 source "$HOME/.dotfiles/zsh.d/lib/exports.zsh"
+source "$HOME/.dotfiles/zsh.d/lib/functions.zsh"
+
 #export $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
