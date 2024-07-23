@@ -257,7 +257,27 @@ VENV_NAME="$(basename $CURRENT_VENV_DIR)"
 pip freeze | tee $CURRENT_VENV_DIR/requirements.txt
 ln -sf "$CURRENT_VENV_DIR/requirements.txt" "$LOCAL_VENV_HOME/requirements/$VENV_NAME.requirements.txt"
 deactive 
-
 }
 
-export nvim="vim"
+
+## TODO: Fix RC_DIR hardcode dependency after migrating dotty --> dotty2 repo 
+## ... and add better output/logging
+# source runtime files (source files that are not specific to BASH or ZSH)
+rc_src (){
+    DOTFILES_HOME="$1"
+    echo ""
+    #echo "DOTFILES_HOME local value:  $DOTFILES_HOME"
+    RC_DIR="$DOTFILES_HOME/rc.d"
+    #find "$RC_DIR" -type f -mindepth 1 -exec echo source {} \; 2> /dev/null
+    find "$RC_DIR" -type f -mindepth 1 -exec source {} \; 2> /dev/null
+}
+# hardcoding since "rc.d" dir only available in my v2 dotfiles (newdots)
+RC_DIR="/home/nukk/git/ongoing/newdots" 
+rc_src $RC_DIR
+
+
+# TEMPFIX:
+alias vim="/usr/bin/vim"
+alias vi="/usr/bin/vim"
+alias nv="/usr/bin/nvim"
+alias lv="/usr/bin/lvim"
